@@ -1,41 +1,34 @@
 "use client"
 
-import { ArrowRight, ArrowUpRight, Bot, Code2, Megaphone, ShoppingCart } from "lucide-react"
+import Image from "next/image"
+import { ArrowRight, ArrowUpRight, GraduationCap, Stethoscope, BookOpen } from "lucide-react"
 
 import { TiltCard } from "@/components/tilt-card"
 
 const PROJECTS = [
   {
-    client: "Nova",
-    title: "E-Commerce Platform Redesign",
-    tags: ["UI/UX Design", "Web Development", "E-commerce"],
-    icon: ShoppingCart,
-    from: "from-blue-700",
-    to: "to-blue-500",
+    client: "Dr. A Q Khan Hospital",
+    title: "Hospital Website Development",
+    tags: ["Web Development", "Healthcare"],
+    icon: Stethoscope,
+    image: "/dr-aq-khan-hospital.jpg",
+    url: "https://draqkhanhospital.org",
   },
   {
-    client: "Cobalt",
-    title: "SaaS Analytics Dashboard",
-    tags: ["Product Design", "AI Automation", "Development"],
-    icon: Bot,
-    from: "from-blue-600",
-    to: "to-cyan-400",
+    client: "Alkaram University",
+    title: "Institutional Website Development",
+    tags: ["Web Development", "Education"],
+    icon: GraduationCap,
+    image: "/alkaram-university.jpg",
+    url: "https://akii.edu.pk",
   },
   {
-    client: "Meridian",
-    title: "Brand Website & SEO Overhaul",
-    tags: ["Web Design", "Branding", "SEO"],
-    icon: Code2,
-    from: "from-sky-600",
-    to: "to-blue-500",
-  },
-  {
-    client: "Fieldstone",
-    title: "Social Growth Campaign",
-    tags: ["Social Media", "Content Strategy", "Ads"],
-    icon: Megaphone,
-    from: "from-blue-800",
-    to: "to-sky-500",
+    client: "Uni American Eagles",
+    title: "Online Education Platform",
+    tags: ["Web Development", "E-Learning"],
+    icon: BookOpen,
+    image: "/uni-american-eagles.png",
+    url: "https://uniae-edu.us",
   },
 ]
 
@@ -68,22 +61,21 @@ export function PortfolioSection() {
           </a>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((project) => (
-            <TiltCard key={project.title} className="bg-card">
+            <TiltCard key={project.title} hoverTilt={false} className="bg-card">
               <div className="flex h-full flex-col">
-                <div
-                  className={`relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-gradient-to-br ${project.from} ${project.to}`}
-                >
-                  <div className="absolute top-4 left-5 flex gap-1.5">
-                    <span className="h-2 w-2 rounded-full bg-white/40" />
-                    <span className="h-2 w-2 rounded-full bg-white/40" />
-                    <span className="h-2 w-2 rounded-full bg-white/40" />
-                  </div>
-                  <project.icon
-                    className="h-14 w-14 text-white/20"
-                    strokeWidth={1.25}
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={`${project.client} website, built by Alkaram Tech`}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
                   />
+                  <div className="absolute top-4 left-4 flex h-9 w-9 items-center justify-center rounded-full bg-blue-950/80 text-white backdrop-blur-sm">
+                    <project.icon className="h-4 w-4" />
+                  </div>
                 </div>
 
                 <div className="flex flex-1 flex-col p-5 sm:p-6">
@@ -108,8 +100,10 @@ export function PortfolioSection() {
                       </h3>
                     </div>
                     <a
-                      href="#contact"
-                      aria-label={`View the ${project.title} project`}
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit the ${project.client} website`}
                       className="group/view flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-950 text-white transition-colors hover:bg-blue-900"
                     >
                       <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/view:translate-x-0.5 group-hover/view:-translate-y-0.5" />

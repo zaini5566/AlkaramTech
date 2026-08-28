@@ -7,16 +7,16 @@ import { cn } from "@/lib/utils"
 import { TiltCard } from "@/components/tilt-card"
 
 const CONTACT_INFO = [
-  { icon: Phone, label: "+1 (406) 555-0120", href: "tel:+14065550120" },
+  { icon: Phone, label: "+92 300-0241292", href: "tel:+923000241292" },
   {
     icon: Mail,
-    label: "hello@alkaramtech.com",
-    href: "mailto:hello@alkaramtech.com",
+    label: "info@alkaramtech.com",
+    href: "mailto:info@alkaramtech.com",
   },
   { icon: MessageCircle, label: "@alkaramtech", href: "#" },
   {
     icon: MapPin,
-    label: "2464 Royal Ln. Mesa, New Jersey 45463",
+    label: "Model Town Lahore",
     href: "#",
   },
 ]

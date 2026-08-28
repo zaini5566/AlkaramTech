@@ -187,7 +187,7 @@ export function TestimonialsSection() {
             Clients Testimonials
           </div>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-balance text-foreground sm:text-4xl lg:text-5xl">
-            The Impact of My Work:{" "}
+            The Impact of Our Work:{" "}
             <span className="text-blue-600 italic">Client Testimonials</span>
           </h2>
         </div>

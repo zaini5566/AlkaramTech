@@ -107,15 +107,15 @@ export function FooterSection() {
             <ul className="mt-4 flex flex-col gap-3 text-sm text-white/60">
               <li className="flex items-start gap-2.5">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-blue-400" />
-                +1 (406) 555-0120
+                +92 300 0241292
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-blue-400" />
-                hello@alkaramtech.com
+                info@alkaramtech.com
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-400" />
-                2464 Royal Ln. Mesa, New Jersey 45463
+                Model Town Lahore
               </li>
             </ul>
           </div>
