@@ -66,21 +66,21 @@ export function ServicesSection() {
           {SERVICES.map((service) => (
             <TiltCard
               key={service.title}
-              className="border-transparent bg-muted/60 shadow-none group-hover:shadow-none"
+              className="border-transparent bg-zinc-900 shadow-none group-hover:shadow-none"
             >
               <div className="flex h-full flex-col p-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-950 text-white">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-cyan-400 text-white">
                   <service.icon className="h-5 w-5" />
                 </div>
-                <h3 className="mt-5 text-base font-semibold tracking-tight text-foreground">
+                <h3 className="mt-5 text-base font-semibold tracking-tight text-white">
                   {service.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-sm leading-relaxed text-white/60">
                   {service.description}
                 </p>
                 <a
                   href="#contact"
-                  className="group/link mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-foreground"
+                  className="group/link mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-white"
                 >
                   Learn more
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">

@@ -170,9 +170,13 @@ export function HeroSection() {
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        className="relative z-10 mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-12 px-6 pt-32 pb-16 lg:grid-cols-2 lg:gap-8 lg:px-8"
+        className={cn(
+          "relative z-10 mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-10 px-6 pt-32 pb-16 lg:grid-cols-2 lg:gap-8 lg:px-8",
+          '[grid-template-areas:"intro"_"figure"_"pills"_"cta"_"stats"]',
+          'lg:[grid-template-areas:"intro_figure"_"pills_figure"_"cta_figure"_"stats_figure"]'
+        )}
       >
-        <div className="flex flex-col items-start text-left">
+        <div className="flex flex-col items-start text-left [grid-area:intro]">
           <motion.div
             variants={itemVariants}
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm font-medium text-foreground/80 shadow-sm backdrop-blur-sm"
@@ -209,63 +213,63 @@ export function HeroSection() {
             scale digital products — from high-converting websites to
             AI-powered automation and e-commerce growth engines.
           </motion.p>
-
-          <motion.div
-            variants={itemVariants}
-            className="mt-9 flex flex-wrap items-center gap-2.5"
-          >
-            {SERVICE_ITEMS.map((service, index) => {
-              const isActive = index === activeIndex
-              return (
-                <button
-                  key={service.label}
-                  type="button"
-                  onClick={() => selectService(index)}
-                  className={cn(
-                    "flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-sm transition-colors",
-                    isActive
-                      ? "border-blue-300 bg-blue-50 text-foreground shadow-sm"
-                      : "border-border bg-card/60 text-foreground/70 hover:border-blue-200 hover:bg-blue-50/60 hover:text-foreground"
-                  )}
-                >
-                  <service.icon
-                    className="h-3.5 w-3.5"
-                    style={{ color: service.accent }}
-                  />
-                  {service.label}
-                </button>
-              )
-            })}
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="mt-10 flex w-full flex-row items-center gap-3 sm:w-auto"
-          >
-            <Button
-              render={<a href="#contact" />}
-              nativeButton={false}
-              size="lg"
-              className="group h-11 flex-1 justify-center rounded-full bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 px-4 text-sm font-medium whitespace-nowrap text-white shadow-lg shadow-blue-600/25 hover:opacity-90 sm:h-12 sm:flex-none sm:px-7 sm:text-base"
-            >
-              Start Your Project
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-            <Button
-              render={<a href="#work" />}
-              nativeButton={false}
-              variant="outline"
-              size="lg"
-              className="h-11 flex-1 justify-center rounded-full px-4 text-sm font-medium whitespace-nowrap sm:h-12 sm:flex-none sm:px-7 sm:text-base"
-            >
-              Explore Our Work
-            </Button>
-          </motion.div>
         </div>
 
         <motion.div
           variants={itemVariants}
-          className="relative h-[320px] w-full sm:h-[420px] lg:h-[560px]"
+          className="flex flex-wrap items-center gap-2.5 [grid-area:pills]"
+        >
+          {SERVICE_ITEMS.map((service, index) => {
+            const isActive = index === activeIndex
+            return (
+              <button
+                key={service.label}
+                type="button"
+                onClick={() => selectService(index)}
+                className={cn(
+                  "flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-sm transition-colors",
+                  isActive
+                    ? "border-blue-300 bg-blue-50 text-foreground shadow-sm"
+                    : "border-border bg-card/60 text-foreground/70 hover:border-blue-200 hover:bg-blue-50/60 hover:text-foreground"
+                )}
+              >
+                <service.icon
+                  className="h-3.5 w-3.5"
+                  style={{ color: service.accent }}
+                />
+                {service.label}
+              </button>
+            )
+          })}
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="flex w-full flex-row items-center gap-3 [grid-area:cta] sm:w-auto"
+        >
+          <Button
+            render={<a href="#contact" />}
+            nativeButton={false}
+            size="lg"
+            className="group h-11 flex-1 justify-center rounded-full bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 px-4 text-sm font-medium whitespace-nowrap text-white shadow-lg shadow-blue-600/25 hover:opacity-90 sm:h-12 sm:flex-none sm:px-7 sm:text-base"
+          >
+            Start Your Project
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Button>
+          <Button
+            render={<a href="#work" />}
+            nativeButton={false}
+            variant="outline"
+            size="lg"
+            className="h-11 flex-1 justify-center rounded-full px-4 text-sm font-medium whitespace-nowrap sm:h-12 sm:flex-none sm:px-7 sm:text-base"
+          >
+            Explore Our Work
+          </Button>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="relative h-[320px] w-full [grid-area:figure] sm:h-[420px] lg:h-[560px]"
         >
           <HeroFigure
             className="h-full w-full"
@@ -317,7 +321,7 @@ export function HeroSection() {
 
         <motion.div
           variants={itemVariants}
-          className="grid w-full max-w-md grid-cols-2 gap-x-6 gap-y-7 border-t border-border pt-8 sm:grid-cols-4 lg:col-start-1"
+          className="grid w-full max-w-md grid-cols-2 gap-x-6 gap-y-7 border-t border-border pt-8 [grid-area:stats] sm:grid-cols-4"
         >
           {STATS.map((stat) => (
             <div key={stat.label} className="flex flex-col items-start">

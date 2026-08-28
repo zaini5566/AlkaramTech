@@ -35,6 +35,27 @@ export function SiteHeader() {
     setOpen(false)
   }, [scrolled])
 
+  // A plain hash <a> inside the closing mobile menu never scrolls: closing
+  // the menu re-renders/unmounts it in the same tick as the click, which
+  // reliably defeats the browser's native scroll-to-hash jump (confirmed —
+  // a manual scrollIntoView right after works fine, the native jump never
+  // moves scrollY at all). So we drive the scroll ourselves instead of
+  // relying on the anchor's default action.
+  function navigateTo(href: string) {
+    return (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault()
+      setOpen(false)
+      document.body.style.overflow = ""
+      // Scrolling in the same tick as clearing overflow:hidden is a no-op —
+      // the browser hasn't reflowed into a scrollable layout yet. One frame
+      // is enough for that to settle.
+      requestAnimationFrame(() => {
+        document.querySelector(href)?.scrollIntoView({ behavior: "smooth" })
+      })
+      window.history.pushState(null, "", href)
+    }
+  }
+
   return (
     <header
       className={cn(
@@ -45,7 +66,7 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:h-18 lg:px-8">
-        <a href="#top" className="group flex items-center gap-2.5">
+        <a href="#top" onClick={navigateTo("#top")} className="group flex items-center gap-2.5">
           <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-cyan-400 shadow-lg shadow-blue-900/40">
             <Sparkles className="h-4 w-4 text-white" />
           </span>
@@ -104,7 +125,7 @@ export function SiteHeader() {
                 <motion.a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setOpen(false)}
+                  onClick={navigateTo(link.href)}
                   initial={{ opacity: 0, x: -8 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.04, duration: 0.25 }}
@@ -114,7 +135,7 @@ export function SiteHeader() {
                 </motion.a>
               ))}
               <Button
-                render={<a href="#contact" onClick={() => setOpen(false)} />}
+                render={<a href="#contact" onClick={navigateTo("#contact")} />}
                 nativeButton={false}
                 className="mt-2 w-full rounded-full bg-blue-600 text-white hover:bg-blue-500"
               >
