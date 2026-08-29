@@ -9,9 +9,13 @@ import {
   Bot,
   ChevronDown,
   Code2,
+  Globe,
   Megaphone,
   ShoppingCart,
   Sparkles,
+  Star,
+  TrendingUp,
+  Users,
   type LucideIcon,
 } from "lucide-react"
 
@@ -73,10 +77,10 @@ const ROTATION_INTERVAL_MS = 6000
 const SWAP_TRANSITION_SECONDS = 0.5
 
 const STATS = [
-  { value: "8+", label: "Years in business" },
-  { value: "120+", label: "Projects delivered" },
-  { value: "40+", label: "Brands scaled" },
-  { value: "24/7", label: "Support & monitoring" },
+  { value: "8+", label: "Years in business", icon: Star },
+  { value: "120+", label: "Projects delivered", icon: TrendingUp },
+  { value: "40+", label: "Brands scaled", icon: Globe },
+  { value: "24/7", label: "Support & monitoring", icon: Users },
 ]
 
 const containerVariants: Variants = {
@@ -173,7 +177,7 @@ export function HeroSection() {
         className={cn(
           "relative z-10 mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-10 px-6 pt-32 pb-16 lg:grid-cols-2 lg:gap-8 lg:px-8",
           '[grid-template-areas:"intro"_"figure"_"pills"_"cta"_"stats"]',
-          'lg:[grid-template-areas:"intro_figure"_"pills_figure"_"cta_figure"_"stats_figure"]'
+          'lg:[grid-template-areas:"intro_figure"_"pills_figure"_"cta_figure"_"stats_stats"]'
         )}
       >
         <div className="flex flex-col items-start text-left [grid-area:intro]">
@@ -187,7 +191,7 @@ export function HeroSection() {
 
           <motion.h1
             variants={itemVariants}
-            className="mt-7 max-w-xl text-4xl font-semibold tracking-tight text-balance text-foreground sm:text-5xl lg:text-[3.4rem] lg:leading-[1.05]"
+            className="mt-7 max-w-xl font-heading text-4xl font-extrabold tracking-tight text-balance text-foreground sm:text-5xl lg:text-[3.4rem] lg:leading-[1.05]"
           >
             We build{" "}
             <span className="inline-block">
@@ -229,8 +233,8 @@ export function HeroSection() {
                 className={cn(
                   "flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-sm transition-colors",
                   isActive
-                    ? "border-blue-300 bg-blue-50 text-foreground shadow-sm"
-                    : "border-border bg-card/60 text-foreground/70 hover:border-blue-200 hover:bg-blue-50/60 hover:text-foreground"
+                    ? "border-blue-300 bg-blue-50 text-blue-950 shadow-sm"
+                    : "border-border bg-card/60 text-foreground/70 hover:border-blue-200 hover:bg-blue-50/60 hover:text-blue-950"
                 )}
               >
                 <service.icon
@@ -321,18 +325,26 @@ export function HeroSection() {
 
         <motion.div
           variants={itemVariants}
-          className="grid w-full max-w-md grid-cols-2 gap-x-6 gap-y-7 border-t border-border pt-8 [grid-area:stats] sm:grid-cols-4"
+          className="mx-auto mt-4 w-full max-w-3xl [grid-area:stats] lg:mt-10"
         >
-          {STATS.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-start">
-              <span className="text-2xl font-semibold tracking-tight text-foreground">
-                {stat.value}
-              </span>
-              <span className="mt-1 text-xs text-muted-foreground">
-                {stat.label}
-              </span>
-            </div>
-          ))}
+          <div className="grid grid-cols-2 gap-x-4 gap-y-6 rounded-2xl border border-border/60 bg-card/90 px-6 py-6 shadow-lg shadow-blue-900/5 backdrop-blur-md sm:grid-cols-4 sm:gap-y-0 sm:divide-x sm:divide-border/70 sm:px-4 sm:py-7">
+            {STATS.map((stat) => (
+              <div
+                key={stat.label}
+                className="flex flex-col items-center justify-center gap-1.5 px-2 text-center sm:px-4"
+              >
+                <div className="flex items-center gap-1.5">
+                  <stat.icon className="h-4 w-4 shrink-0 text-blue-600" />
+                  <span className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+                    {stat.value}
+                  </span>
+                </div>
+                <span className="text-xs text-muted-foreground">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </motion.div>
 
@@ -340,9 +352,9 @@ export function HeroSection() {
         style={{ opacity: cueOpacity }}
         className="relative z-10 mb-8 flex flex-col items-center gap-2 self-center text-muted-foreground"
       >
-        <span className="text-xs font-medium tracking-wide uppercase">
+        {/* <span className="text-xs font-medium tracking-wide uppercase">
           Scroll to explore
-        </span>
+        </span> */}
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
