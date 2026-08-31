@@ -8,44 +8,11 @@ import {
   type PointerEvent as ReactPointerEvent,
 } from "react"
 import Image from "next/image"
-import {
-  ArrowRight,
-  ArrowUpRight,
-  BookOpen,
-  ChevronLeft,
-  ChevronRight,
-  GraduationCap,
-  Stethoscope,
-} from "lucide-react"
+import Link from "next/link"
+import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react"
 
 import { TiltCard } from "@/components/tilt-card"
-
-const PROJECTS = [
-  {
-    client: "Dr. A Q Khan Hospital",
-    title: "Hospital Website Development",
-    tags: ["Web Development", "Healthcare"],
-    icon: Stethoscope,
-    image: "/dr-aq-khan-hospital.jpg",
-    url: "https://draqkhanhospital.org",
-  },
-  {
-    client: "Alkaram University",
-    title: "Institutional Website Development",
-    tags: ["Web Development", "Education"],
-    icon: GraduationCap,
-    image: "/alkaram-university.jpg",
-    url: "https://akii.edu.pk",
-  },
-  {
-    client: "Uni American Eagles",
-    title: "Online Education Platform",
-    tags: ["Web Development", "E-Learning"],
-    icon: BookOpen,
-    image: "/uni-american-eagles.png",
-    url: "https://uniae-edu.us",
-  },
-]
+import { PROJECTS } from "@/lib/projects"
 
 // The track is rendered as several back-to-back copies of PROJECTS so the
 // carousel always has more cards to scroll into — the scroll position is
@@ -235,15 +202,15 @@ export function PortfolioSection() {
             </h2>
           </div>
 
-          <a
-            href="#contact"
+          <Link
+            href="/portfolio"
             className="group inline-flex shrink-0 items-center rounded-full bg-blue-950 py-1.5 pr-1.5 pl-5 text-sm font-medium text-white transition-colors hover:bg-blue-900"
           >
             View All Projects
             <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">
               <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
             </span>
-          </a>
+          </Link>
         </div>
 
         <div className="relative m-10 py-4 sm:mt-12 sm:px-12 sm:py-4 lg:px-10">

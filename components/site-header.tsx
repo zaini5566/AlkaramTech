@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react"
 import {
   ArrowUpRight,
@@ -16,7 +17,7 @@ import {
   X,
 } from "lucide-react"
 
-import { cn } from "@/lib/utils"
+import { cn, sectionHref } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 
@@ -24,7 +25,7 @@ const NAV_LINKS = [
   { href: "#top", label: "Home" },
   { href: "#services", label: "Services" },
   { href: "#about", label: "About" },
-  { href: "#work", label: "Portfolio" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "#contact", label: "Contact" },
 ]
 
@@ -42,11 +43,17 @@ const SERVICES_MENU = [
 const SERVICES_MENU_CLOSE_DELAY_MS = 150
 
 export function SiteHeader() {
+  const pathname = usePathname()
+  const router = useRouter()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [servicesMenuOpen, setServicesMenuOpen] = useState(false)
   const servicesCloseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const { scrollY } = useScroll()
+
+  function resolveHref(href: string) {
+    return href.startsWith("#") ? sectionHref(href, pathname) : href
+  }
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 12)
@@ -82,17 +89,26 @@ export function SiteHeader() {
     setOpen(false)
   }, [scrolled])
 
-  // A plain hash <a> inside the closing mobile menu never scrolls: closing
-  // the menu re-renders/unmounts it in the same tick as the click, which
-  // reliably defeats the browser's native scroll-to-hash jump (confirmed —
-  // a manual scrollIntoView right after works fine, the native jump never
-  // moves scrollY at all). So we drive the scroll ourselves instead of
-  // relying on the anchor's default action.
+  // Every nav click is driven through here rather than a plain anchor's
+  // default action — a real route (e.g. /portfolio) needs router.push() so
+  // it's a fast client-side transition instead of a full browser reload,
+  // and a hash link needs a manual scrollIntoView because a plain hash <a>
+  // inside the closing mobile menu never scrolls: closing the menu
+  // re-renders/unmounts it in the same tick as the click, which reliably
+  // defeats the browser's native scroll-to-hash jump (confirmed — a manual
+  // scrollIntoView right after works fine, the native jump never moves
+  // scrollY at all).
   function navigateTo(href: string) {
     return (e: React.MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault()
       setOpen(false)
       document.body.style.overflow = ""
+
+      if (!href.startsWith("#")) {
+        router.push(href)
+        return
+      }
+
       // Scrolling in the same tick as clearing overflow:hidden is a no-op —
       // the browser hasn't reflowed into a scrollable layout yet. One frame
       // is enough for that to settle.
@@ -114,7 +130,11 @@ export function SiteHeader() {
               : "shadow-[0_10px_30px_-10px_rgba(15,23,42,0.2)]"
           )}
         >
-          <a href="#top" onClick={navigateTo("#top")} className="group flex items-center gap-2.5">
+          <a
+            href={resolveHref("#top")}
+            onClick={navigateTo(resolveHref("#top"))}
+            className="group flex items-center gap-2.5"
+          >
             <motion.span
               style={{ transformPerspective: 400 }}
               whileHover={{ rotateY: 25, rotateX: -8, scale: 1.06 }}
@@ -140,8 +160,9 @@ export function SiteHeader() {
                   onMouseLeave={scheduleServicesMenuClose}
                 >
                   <a
-                    href={link.href}
-                    className="relative flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+                    href={resolveHref(link.href)}
+                    onClick={navigateTo(resolveHref(link.href))}
+                    className="relative flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-cyan-300 active:bg-white/20 active:text-cyan-200"
                   >
                     {link.label}
                     <ChevronDown
@@ -165,12 +186,12 @@ export function SiteHeader() {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="group/item flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-blue-50"
+                            className="group/item flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-blue-50 active:bg-blue-100"
                           >
                             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-cyan-400 text-white">
                               <service.icon className="h-4 w-4" />
                             </span>
-                            <span className="text-sm font-medium text-foreground">
+                            <span className="text-sm font-medium text-foreground transition-colors group-hover/item:text-blue-700">
                               {service.label}
                             </span>
                             <ArrowUpRight className="ml-auto h-3.5 w-3.5 text-muted-foreground opacity-0 transition-opacity group-hover/item:opacity-100" />
@@ -183,8 +204,9 @@ export function SiteHeader() {
               ) : (
                 <a
                   key={link.href}
-                  href={link.href}
-                  className="relative rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+                  href={resolveHref(link.href)}
+                  onClick={navigateTo(resolveHref(link.href))}
+                  className="relative rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-cyan-300 active:bg-white/20 active:text-cyan-200"
                 >
                   {link.label}
                 </a>
@@ -195,7 +217,7 @@ export function SiteHeader() {
           <div className="hidden items-center gap-3 lg:flex">
             <ThemeToggle />
             <Button
-              render={<a href="#contact" />}
+              render={<a href={resolveHref("#contact")} onClick={navigateTo(resolveHref("#contact"))} />}
               nativeButton={false}
               className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-5 text-white shadow-[0_4px_0_0_#0e3a8a] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_0_0_#0e3a8a] active:translate-y-0.5 active:shadow-[0_1px_0_0_#0e3a8a]"
             >
@@ -258,12 +280,12 @@ export function SiteHeader() {
                 {NAV_LINKS.map((link, i) => (
                   <motion.a
                     key={link.href}
-                    href={link.href}
-                    onClick={navigateTo(link.href)}
+                    href={resolveHref(link.href)}
+                    onClick={navigateTo(resolveHref(link.href))}
                     initial={{ opacity: 0, x: 16 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05, duration: 0.25 }}
-                    className="rounded-xl px-3.5 py-3 text-base font-medium text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
+                    className="rounded-xl px-3.5 py-3 text-base font-medium text-foreground/80 transition-colors hover:bg-blue-50 hover:text-blue-700 active:bg-blue-100 active:text-blue-800"
                   >
                     {link.label}
                   </motion.a>
@@ -272,7 +294,7 @@ export function SiteHeader() {
 
               <div className="shrink-0 border-t border-border p-5">
                 <Button
-                  render={<a href="#contact" onClick={navigateTo("#contact")} />}
+                  render={<a href={resolveHref("#contact")} onClick={navigateTo(resolveHref("#contact"))} />}
                   nativeButton={false}
                   className="w-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-[0_4px_0_0_#0e3a8a] active:translate-y-0.5 active:shadow-[0_1px_0_0_#0e3a8a]"
                 >

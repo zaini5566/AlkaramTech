@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
 import {
   ArrowRight,
   Mail,
@@ -11,12 +12,13 @@ import {
   X as XIcon,
 } from "lucide-react"
 
+import { sectionHref } from "@/lib/utils"
 import { FacebookIcon, InstagramIcon, LinkedinIcon, YoutubeIcon } from "@/components/social-icons"
 
 const NAV_LINKS = [
   { label: "Home", href: "#top" },
   { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Blog", href: "#blog" },
   { label: "FAQs", href: "#faq" },
@@ -31,6 +33,8 @@ const SOCIAL_LINKS = [
 ]
 
 export function FooterSection() {
+  const pathname = usePathname()
+
   // Same technique as the contact form: FormSubmit needs an absolute
   // redirect URL, which depends on whatever origin the site is served from.
   const [nextUrl, setNextUrl] = useState("")
@@ -48,7 +52,7 @@ export function FooterSection() {
             Let&apos;s <span className="text-blue-400 italic">Connect</span> there
           </h2>
           <a
-            href="#contact"
+            href={sectionHref("#contact", pathname)}
             className="group inline-flex shrink-0 items-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 py-1.5 pr-1.5 pl-5 text-sm font-medium text-white transition-transform duration-300 hover:scale-105"
           >
             Get in Touch
@@ -60,7 +64,7 @@ export function FooterSection() {
 
         <div className="grid grid-cols-1 gap-10 pt-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div>
-            <a href="#top" className="flex items-center gap-2.5">
+            <a href={sectionHref("#top", pathname)} className="flex items-center gap-2.5">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-cyan-400 text-white shadow-md shadow-blue-600/20">
                 <Sparkles className="h-4 w-4" />
               </span>
@@ -92,7 +96,7 @@ export function FooterSection() {
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>
                   <a
-                    href={link.href}
+                    href={link.href.startsWith("#") ? sectionHref(link.href, pathname) : link.href}
                     className="text-sm text-white/60 transition-colors hover:text-white"
                   >
                     {link.label}
