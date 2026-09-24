@@ -18,6 +18,7 @@ import { FacebookIcon, InstagramIcon, LinkedinIcon, YoutubeIcon } from "@/compon
 const NAV_LINKS = [
   { label: "Home", href: "#top" },
   { label: "Services", href: "#services" },
+  { label: "About", href: "/about" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Blog", href: "#blog" },

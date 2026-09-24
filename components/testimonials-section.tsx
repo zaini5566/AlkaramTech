@@ -18,45 +18,30 @@ type Testimonial = {
 
 const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Sarah Chen",
-    title: "Founder",
-    company: "Nova",
-    quote:
-      "Alkaram Tech rebuilt our entire web presence in six weeks and our conversion rate nearly doubled. The team just gets what actually moves the needle.",
-    rating: 5,
-  },
-  {
-    name: "Marcus Webb",
-    title: "CMO",
-    company: "Cobalt",
-    quote:
-      "Our social channels went from an afterthought to our #1 acquisition channel. The content calendar alone paid for the whole engagement.",
-    rating: 5,
-  },
-  {
-    name: "Priya Anand",
-    title: "COO",
-    company: "Meridian",
-    quote:
-      "The AI automation they built now handles what used to take my ops team fifteen hours a week. It just runs, quietly, in the background.",
-    rating: 5,
-  },
-  {
-    name: "David Kim",
-    title: "Head of E-commerce",
-    company: "Fieldstone",
-    quote:
-      "They migrated our store with zero downtime and checkout abandonment dropped almost overnight. Genuinely impressive execution.",
-    rating: 5,
-  },
-  {
-    name: "Elena Torres",
+    name: "Muhammad Sajid",
     title: "CEO",
-    company: "Northstar",
+    company: "Dr A Q Khan Hospital Trust",
     quote:
-      "Working with Alkaram Tech felt less like hiring an agency and more like adding a technical co-founder.",
+      "Alkaram Tech delivered an excellent hospital website with a modern responsive design and a smooth doctor appointment system. Their professional work, attention to detail, and support were truly impressive.",
     rating: 5,
   },
+  {
+    name: "Prof. Dr J.Tony",
+    title: "CEO",
+    company: "Uni American Eagle",
+    quote:
+      "Alkaram Tech developed an excellent platform for Uni American Eagle, connecting students with their desired universities in America. The website is modern, responsive, user-friendly, and professionally designed.",
+    rating: 5,
+  },
+  {
+    name: "Sajid Hussain",
+    title: "Registrar",
+    company: "Alkaram University",
+    quote:
+      "Alkaram Tech is doing excellent work on the Alkaram University website. The modern, responsive design and user-friendly experience are impressive, and we are very satisfied with their progress.",
+    rating: 5,
+  },
+
 ]
 
 const AUTO_ADVANCE_MS = 5500

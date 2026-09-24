@@ -24,9 +24,9 @@ import { ThemeToggle } from "@/components/theme-toggle"
 const NAV_LINKS = [
   { href: "#top", label: "Home" },
   { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ]
 
 // Dedicated pages don't exist yet — these routes are reserved for when they do.

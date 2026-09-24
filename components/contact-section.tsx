@@ -13,7 +13,6 @@ const CONTACT_INFO = [
     label: "info@alkaramtech.com",
     href: "mailto:info@alkaramtech.com",
   },
-  { icon: MessageCircle, label: "@alkaramtech", href: "#" },
   {
     icon: MapPin,
     label: "Model Town Lahore",
