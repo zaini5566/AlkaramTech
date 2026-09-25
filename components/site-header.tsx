@@ -149,7 +149,7 @@ export function SiteHeader() {
           </a>
 
           <nav
-            className="relative hidden items-center gap-1 rounded-full bg-blue-950 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.15),transparent_60%)] p-1.5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18),inset_0_-8px_16px_-8px_rgba(0,0,0,0.4),0_10px_24px_-8px_rgba(15,23,42,0.55)] lg:flex"
+            className="relative hidden items-center gap-1 rounded-sm bg-blue-950 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.15),transparent_60%)] p-1.5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18),inset_0_-8px_16px_-8px_rgba(0,0,0,0.4),0_10px_24px_-8px_rgba(15,23,42,0.55)] lg:flex"
           >
             {NAV_LINKS.map((link) =>
               link.label === "Services" ? (
@@ -162,7 +162,7 @@ export function SiteHeader() {
                   <a
                     href={resolveHref(link.href)}
                     onClick={navigateTo(resolveHref(link.href))}
-                    className="relative flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-cyan-300 active:bg-white/20 active:text-cyan-200"
+                    className="relative flex items-center gap-1 rounded-sm px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-cyan-300 active:bg-white/20 active:text-cyan-200"
                   >
                     {link.label}
                     <ChevronDown
@@ -206,7 +206,7 @@ export function SiteHeader() {
                   key={link.href}
                   href={resolveHref(link.href)}
                   onClick={navigateTo(resolveHref(link.href))}
-                  className="relative rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-cyan-300 active:bg-white/20 active:text-cyan-200"
+                  className="relative rounded-sm px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-cyan-300 active:bg-white/20 active:text-cyan-200"
                 >
                   {link.label}
                 </a>
@@ -219,7 +219,7 @@ export function SiteHeader() {
             <Button
               render={<a href={resolveHref("#contact")} onClick={navigateTo(resolveHref("#contact"))} />}
               nativeButton={false}
-              className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-5 text-white shadow-[0_4px_0_0_#0e3a8a] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_0_0_#0e3a8a] active:translate-y-0.5 active:shadow-[0_1px_0_0_#0e3a8a]"
+              className="rounded-sm bg-gradient-to-r from-blue-600 to-cyan-500 px-5 text-white shadow-[0_4px_0_0_#0e3a8a] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_0_0_#0e3a8a] active:translate-y-0.5 active:shadow-[0_1px_0_0_#0e3a8a]"
             >
               <MessageCircle className="h-4 w-4" />
               Get In Touch
@@ -296,7 +296,7 @@ export function SiteHeader() {
                 <Button
                   render={<a href={resolveHref("#contact")} onClick={navigateTo(resolveHref("#contact"))} />}
                   nativeButton={false}
-                  className="w-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-[0_4px_0_0_#0e3a8a] active:translate-y-0.5 active:shadow-[0_1px_0_0_#0e3a8a]"
+                  className="w-full rounded-sm bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-[0_4px_0_0_#0e3a8a] active:translate-y-0.5 active:shadow-[0_1px_0_0_#0e3a8a]"
                 >
                   <MessageCircle className="h-4 w-4" />
                   Get In Touch

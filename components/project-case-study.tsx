@@ -114,7 +114,7 @@ export function ProjectCaseStudy({
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700"
+              className="rounded-sm bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700"
             >
               {tag}
             </span>
@@ -125,10 +125,10 @@ export function ProjectCaseStudy({
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group mt-7 inline-flex items-center rounded-full bg-blue-950 py-1.5 pr-1.5 pl-5 text-sm font-medium text-white transition-colors hover:bg-blue-900"
+          className="group mt-7 inline-flex items-center rounded-sm bg-blue-950 py-1.5 pr-1.5 pl-5 text-sm font-medium text-white transition-colors hover:bg-blue-900"
         >
           Visit Live Site
-          <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">
+          <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400">
             <ArrowUpRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </span>
         </a>

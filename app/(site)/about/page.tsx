@@ -100,7 +100,7 @@ export default function AboutPage() {
         </div>
 
         <div className="relative mx-auto flex w-full max-w-4xl flex-col items-center px-6 text-center lg:px-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
+          <span className="inline-flex items-center gap-2 rounded-sm border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
             <Timer className="h-3.5 w-3.5 text-cyan-300" />
             About Alkaram Tech
           </span>
@@ -121,16 +121,16 @@ export default function AboutPage() {
           <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row">
             <Link
               href="/#contact"
-              className="group inline-flex items-center rounded-full bg-white py-1.5 pr-1.5 pl-6 text-sm font-medium text-blue-950 transition-colors hover:bg-blue-50"
+              className="group inline-flex items-center rounded-sm bg-white py-1.5 pr-1.5 pl-6 text-sm font-medium text-blue-950 transition-colors hover:bg-blue-50"
             >
               Start a Project
-              <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">
+              <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400">
                 <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
               </span>
             </Link>
             <Link
               href="/portfolio"
-              className="inline-flex items-center rounded-full border border-white/15 px-6 py-2.5 text-sm font-medium text-white/80 transition-colors hover:border-white/30 hover:text-white"
+              className="inline-flex items-center rounded-sm border border-white/15 px-6 py-2.5 text-sm font-medium text-white/80 transition-colors hover:border-white/30 hover:text-white"
             >
               See Our Work
             </Link>
@@ -310,7 +310,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(37,99,235,0.25),transparent)]" />
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 rounded-sm border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
               What We Do
             </span>
             <h2 className="mt-5 font-heading text-3xl font-extrabold tracking-tight text-balance text-white sm:text-4xl">
@@ -360,10 +360,10 @@ export default function AboutPage() {
           </p>
           <Link
             href="/#contact"
-            className="group mt-8 inline-flex items-center rounded-full bg-white py-1.5 pr-1.5 pl-6 text-sm font-medium text-blue-950 transition-colors hover:bg-blue-50"
+            className="group mt-8 inline-flex items-center rounded-sm bg-white py-1.5 pr-1.5 pl-6 text-sm font-medium text-blue-950 transition-colors hover:bg-blue-50"
           >
             Start Your Project
-            <span className="ml-3 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">
+            <span className="ml-3 flex h-10 w-10 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400">
               <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
             </span>
           </Link>

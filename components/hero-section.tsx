@@ -183,7 +183,7 @@ export function HeroSection() {
         <div className="flex flex-col items-start text-left [grid-area:intro]">
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm font-medium text-foreground/80 shadow-sm backdrop-blur-sm"
+            className="inline-flex items-center gap-2 rounded-sm border border-border bg-card/80 px-4 py-1.5 text-sm font-medium text-foreground/80 shadow-sm backdrop-blur-sm"
           >
             <Sparkles className="h-3.5 w-3.5 text-blue-700" />
             Full-Service IT Agency
@@ -231,7 +231,7 @@ export function HeroSection() {
                 type="button"
                 onClick={() => selectService(index)}
                 className={cn(
-                  "flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-sm transition-colors",
+                  "flex items-center gap-1.5 rounded-sm border px-3.5 py-1.5 text-sm transition-colors",
                   isActive
                     ? "border-blue-300 bg-blue-50 text-blue-950 shadow-sm"
                     : "border-border bg-card/60 text-foreground/70 hover:border-blue-200 hover:bg-blue-50/60 hover:text-blue-950"
@@ -255,7 +255,7 @@ export function HeroSection() {
             render={<a href="#contact" />}
             nativeButton={false}
             size="lg"
-            className="group h-11 flex-1 justify-center rounded-full bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 px-4 text-sm font-medium whitespace-nowrap text-white shadow-lg shadow-blue-600/25 hover:opacity-90 sm:h-12 sm:flex-none sm:px-7 sm:text-base"
+            className="group h-11 flex-1 justify-center rounded-sm bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 px-4 text-sm font-medium whitespace-nowrap text-white shadow-lg shadow-blue-600/25 hover:opacity-90 sm:h-12 sm:flex-none sm:px-7 sm:text-base"
           >
             Start Your Project
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -265,7 +265,7 @@ export function HeroSection() {
             nativeButton={false}
             variant="outline"
             size="lg"
-            className="h-11 flex-1 justify-center rounded-full px-4 text-sm font-medium whitespace-nowrap sm:h-12 sm:flex-none sm:px-7 sm:text-base"
+            className="h-11 flex-1 justify-center rounded-sm px-4 text-sm font-medium whitespace-nowrap sm:h-12 sm:flex-none sm:px-7 sm:text-base"
           >
             Explore Our Work
           </Button>

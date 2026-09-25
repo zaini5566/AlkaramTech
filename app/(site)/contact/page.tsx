@@ -95,7 +95,7 @@ export default function ContactPage() {
         </div>
 
         <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center px-6 text-center lg:px-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
+          <span className="inline-flex items-center gap-2 rounded-sm border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
             <Clock3 className="h-3.5 w-3.5 text-cyan-300" />
             Replies within 1 business day
           </span>
@@ -199,7 +199,7 @@ export default function ContactPage() {
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-zinc-900 [&::-webkit-details-marker]:hidden">
                   {faq.question}
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-zinc-500 transition-transform duration-200 group-open:rotate-45">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm bg-white text-zinc-500 transition-transform duration-200 group-open:rotate-45">
                     <Plus className="h-3.5 w-3.5" />
                   </span>
                 </summary>
@@ -223,16 +223,16 @@ export default function ContactPage() {
           <div className="flex flex-col items-center gap-3 sm:flex-row">
             <Link
               href="tel:+923000241292"
-              className="group inline-flex items-center rounded-full bg-white py-1.5 pr-1.5 pl-6 text-sm font-medium text-blue-950 transition-colors hover:bg-blue-50"
+              className="group inline-flex items-center rounded-sm bg-white py-1.5 pr-1.5 pl-6 text-sm font-medium text-blue-950 transition-colors hover:bg-blue-50"
             >
               +92 300-0241292
-              <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">
+              <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400">
                 <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
               </span>
             </Link>
             <Link
               href="mailto:info@alkaramtech.com"
-              className="inline-flex items-center rounded-full border border-white/15 px-6 py-2.5 text-sm font-medium text-white/80 transition-colors hover:border-white/30 hover:text-white"
+              className="inline-flex items-center rounded-sm border border-white/15 px-6 py-2.5 text-sm font-medium text-white/80 transition-colors hover:border-white/30 hover:text-white"
             >
               info@alkaramtech.com
             </Link>

@@ -227,7 +227,7 @@ export function TestimonialsSection() {
               type="button"
               onClick={() => goTo(activeIndexRef.current - 1)}
               aria-label="Previous testimonial"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-950 text-white transition-colors hover:bg-blue-900"
+              className="flex h-12 w-12 items-center justify-center rounded-sm bg-blue-950 text-white transition-colors hover:bg-blue-900"
             >
               <ArrowLeft className="h-4 w-4" />
             </button>
@@ -235,7 +235,7 @@ export function TestimonialsSection() {
               type="button"
               onClick={() => goTo(activeIndexRef.current + 1)}
               aria-label="Next testimonial"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 text-white transition-transform duration-300 hover:scale-105"
+              className="flex h-12 w-12 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400 text-white transition-transform duration-300 hover:scale-105"
             >
               <ArrowRight className="h-4 w-4" />
             </button>

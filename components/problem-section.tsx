@@ -37,7 +37,7 @@ export function ProblemSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(30,64,175,0.2),transparent)]" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
+          <span className="inline-flex items-center gap-2 rounded-sm border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
             The Problem
           </span>
           <h2 className="mt-5 text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl lg:text-5xl">

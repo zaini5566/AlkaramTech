@@ -103,7 +103,7 @@ export function ContactSection() {
               {CONTACT_INFO.map((item) => (
                 <li key={item.label}>
                   <a href={item.href} className="group flex items-center gap-3">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 text-white shadow-md shadow-blue-600/20">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400 text-white shadow-md shadow-blue-600/20">
                       <item.icon className="h-4.5 w-4.5" />
                     </span>
                     <span className="text-sm font-medium text-foreground/80 transition-colors group-hover:text-foreground">
@@ -235,10 +235,10 @@ export function ContactSection() {
 
               <button
                 type="submit"
-                className="group mt-7 inline-flex items-center rounded-full bg-blue-950 py-1.5 pr-1.5 pl-6 text-sm font-medium text-white transition-colors hover:bg-blue-900"
+                className="group mt-7 inline-flex items-center rounded-sm bg-blue-950 py-1.5 pr-1.5 pl-6 text-sm font-medium text-white transition-colors hover:bg-blue-900"
               >
                 Submit
-                <span className="ml-4 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">
+                <span className="ml-4 flex h-9 w-9 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400">
                   <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
                 </span>
               </button>

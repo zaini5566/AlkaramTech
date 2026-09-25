@@ -61,10 +61,10 @@ export function BlogSection() {
 
           <a
             href="#"
-            className="group inline-flex shrink-0 items-center rounded-full bg-blue-950 py-1.5 pr-1.5 pl-5 text-sm font-medium text-white transition-colors hover:bg-blue-900"
+            className="group inline-flex shrink-0 items-center rounded-sm bg-blue-950 py-1.5 pr-1.5 pl-5 text-sm font-medium text-white transition-colors hover:bg-blue-900"
           >
             View All Blogs
-            <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">
+            <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400">
               <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
             </span>
           </a>
@@ -82,7 +82,7 @@ export function BlogSection() {
 
                 <div className="flex flex-1 flex-col p-6 sm:p-7">
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="rounded-full bg-blue-600 px-3 py-1 text-xs font-medium text-white">
+                    <span className="rounded-sm bg-blue-600 px-3 py-1 text-xs font-medium text-white">
                       {post.category}
                     </span>
                     <span className="text-xs text-muted-foreground">{post.date}</span>

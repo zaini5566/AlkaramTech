@@ -26,7 +26,7 @@ export default function PortfolioPage() {
 
         <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 rounded-sm border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
               Our Work
             </span>
             <h1 className="mt-6 font-heading text-4xl font-extrabold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl">
@@ -48,7 +48,7 @@ export default function PortfolioPage() {
             {CATEGORIES.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/70"
+                className="rounded-sm border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/70"
               >
                 {tag}
               </span>
@@ -81,10 +81,10 @@ export default function PortfolioPage() {
           </p>
           <Link
             href="/#contact"
-            className="group mt-8 inline-flex items-center rounded-full bg-white py-1.5 pr-1.5 pl-6 text-sm font-medium text-blue-950 transition-colors hover:bg-blue-50"
+            className="group mt-8 inline-flex items-center rounded-sm bg-white py-1.5 pr-1.5 pl-6 text-sm font-medium text-blue-950 transition-colors hover:bg-blue-50"
           >
             Start a Conversation
-            <span className="ml-3 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">
+            <span className="ml-3 flex h-10 w-10 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400">
               <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
             </span>
           </Link>

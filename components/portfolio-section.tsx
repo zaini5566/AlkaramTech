@@ -204,10 +204,10 @@ export function PortfolioSection() {
 
           <Link
             href="/portfolio"
-            className="group inline-flex shrink-0 items-center rounded-full bg-blue-950 py-1.5 pr-1.5 pl-5 text-sm font-medium text-white transition-colors hover:bg-blue-900"
+            className="group inline-flex shrink-0 items-center rounded-sm bg-blue-950 py-1.5 pr-1.5 pl-5 text-sm font-medium text-white transition-colors hover:bg-blue-900"
           >
             View All Projects
-            <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">
+            <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400">
               <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
             </span>
           </Link>
@@ -251,7 +251,7 @@ export function PortfolioSection() {
                       {project.tags.slice(0, 2).map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700"
+                          className="rounded-sm bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700"
                         >
                           {tag}
                         </span>
@@ -272,7 +272,7 @@ export function PortfolioSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Visit the ${project.client} website`}
-                        className="group/view flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-950 text-white transition-colors hover:bg-blue-900"
+                        className="group/view flex h-9 w-9 shrink-0 items-center justify-center rounded-sm bg-blue-950 text-white transition-colors hover:bg-blue-900"
                       >
                         <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/view:translate-x-0.5 group-hover/view:-translate-y-0.5" />
                       </a>
@@ -288,7 +288,7 @@ export function PortfolioSection() {
             type="button"
             aria-label="Previous project"
             onClick={() => handleArrowClick(-1)}
-            className="absolute top-1/2 left-0 z-10 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-blue-950 text-white shadow-lg transition-colors hover:bg-blue-900 sm:h-10 sm:w-10 lg:h-11 lg:w-11"
+            className="absolute top-1/2 left-0 z-10 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-sm bg-blue-950 text-white shadow-lg transition-colors hover:bg-blue-900 sm:h-10 sm:w-10 lg:h-11 lg:w-11"
           >
             <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>
@@ -296,7 +296,7 @@ export function PortfolioSection() {
             type="button"
             aria-label="Next project"
             onClick={() => handleArrowClick(1)}
-            className="absolute top-1/2 right-0 z-10 flex h-9 w-9 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-blue-950 text-white shadow-lg transition-colors hover:bg-blue-900 sm:h-10 sm:w-10 lg:h-11 lg:w-11"
+            className="absolute top-1/2 right-0 z-10 flex h-9 w-9 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-sm bg-blue-950 text-white shadow-lg transition-colors hover:bg-blue-900 sm:h-10 sm:w-10 lg:h-11 lg:w-11"
           >
             <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>

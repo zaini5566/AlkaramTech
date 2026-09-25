@@ -82,7 +82,7 @@ function FaqItem({
         </span>
         <span
           className={cn(
-            "flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-colors duration-300",
+            "flex h-7 w-7 shrink-0 items-center justify-center rounded-sm transition-colors duration-300",
             isOpen ? "bg-white/20" : "bg-white/10"
           )}
         >

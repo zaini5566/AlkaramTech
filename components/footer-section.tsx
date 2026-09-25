@@ -54,10 +54,10 @@ export function FooterSection() {
           </h2>
           <a
             href={sectionHref("#contact", pathname)}
-            className="group inline-flex shrink-0 items-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 py-1.5 pr-1.5 pl-5 text-sm font-medium text-white transition-transform duration-300 hover:scale-105"
+            className="group inline-flex shrink-0 items-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400 py-1.5 pr-1.5 pl-5 text-sm font-medium text-white transition-transform duration-300 hover:scale-105"
           >
             Get in Touch
-            <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-full bg-blue-950">
+            <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-sm bg-blue-950">
               <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
             </span>
           </a>
@@ -83,7 +83,7 @@ export function FooterSection() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/60 transition-colors hover:border-blue-400/50 hover:bg-white/10 hover:text-blue-400"
+                  className="flex h-9 w-9 items-center justify-center rounded-sm border border-white/10 text-white/60 transition-colors hover:border-blue-400/50 hover:bg-white/10 hover:text-blue-400"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -155,7 +155,7 @@ export function FooterSection() {
               <label htmlFor="newsletter-email" className="sr-only">
                 Email address
               </label>
-              <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 py-1.5 pr-1.5 pl-4">
+              <div className="flex items-center gap-2 rounded-sm border border-white/10 bg-white/5 py-1.5 pr-1.5 pl-4">
                 <input
                   id="newsletter-email"
                   name="email"
@@ -167,7 +167,7 @@ export function FooterSection() {
                 <button
                   type="submit"
                   aria-label="Subscribe"
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 text-white transition-transform duration-300 hover:scale-105"
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400 text-white transition-transform duration-300 hover:scale-105"
                 >
                   <Send className="h-3.5 w-3.5" />
                 </button>

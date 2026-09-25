@@ -54,7 +54,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <service.icon className="h-9 w-9 sm:h-11 sm:w-11" />
           </ServiceIconBadge>
 
-          <span className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
+          <span className="mt-8 inline-flex items-center gap-2 rounded-sm border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
             Our Services
           </span>
 
@@ -75,16 +75,16 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row">
             <Link
               href="/#contact"
-              className="group inline-flex items-center rounded-full bg-white py-1.5 pr-1.5 pl-6 text-sm font-medium text-blue-950 transition-colors hover:bg-blue-50"
+              className="group inline-flex items-center rounded-sm bg-white py-1.5 pr-1.5 pl-6 text-sm font-medium text-blue-950 transition-colors hover:bg-blue-50"
             >
               Start Your Project
-              <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">
+              <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400">
                 <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
               </span>
             </Link>
             <Link
               href="/portfolio"
-              className="inline-flex items-center rounded-full border border-white/15 px-6 py-2.5 text-sm font-medium text-white/80 transition-colors hover:border-white/30 hover:text-white"
+              className="inline-flex items-center rounded-sm border border-white/15 px-6 py-2.5 text-sm font-medium text-white/80 transition-colors hover:border-white/30 hover:text-white"
             >
               See Our Work
             </Link>
@@ -213,7 +213,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         />
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 rounded-sm border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
               Why Alkaram Tech
             </span>
             <h2 className="mt-5 font-heading text-3xl font-extrabold tracking-tight text-balance text-white sm:text-4xl">
@@ -266,10 +266,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </p>
             <Link
               href="/portfolio"
-              className="group mt-7 inline-flex items-center rounded-full bg-blue-950 py-1.5 pr-1.5 pl-6 text-sm font-medium text-white transition-colors hover:bg-blue-900"
+              className="group mt-7 inline-flex items-center rounded-sm bg-blue-950 py-1.5 pr-1.5 pl-6 text-sm font-medium text-white transition-colors hover:bg-blue-900"
             >
               View Our Portfolio
-              <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">
+              <span className="ml-3 flex h-9 w-9 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400">
                 <ArrowUpRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
             </Link>
@@ -298,7 +298,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-foreground [&::-webkit-details-marker]:hidden">
                   {faq.question}
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground transition-transform duration-200 group-open:rotate-45">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm bg-muted text-muted-foreground transition-transform duration-200 group-open:rotate-45">
                     <Plus className="h-3.5 w-3.5" />
                   </span>
                 </summary>
@@ -322,10 +322,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
           </p>
           <Link
             href="/#contact"
-            className="group mt-8 inline-flex items-center rounded-full bg-white py-1.5 pr-1.5 pl-6 text-sm font-medium text-blue-950 transition-colors hover:bg-blue-50"
+            className="group mt-8 inline-flex items-center rounded-sm bg-white py-1.5 pr-1.5 pl-6 text-sm font-medium text-blue-950 transition-colors hover:bg-blue-50"
           >
             Start Your Project
-            <span className="ml-3 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-400">
+            <span className="ml-3 flex h-10 w-10 items-center justify-center rounded-sm bg-gradient-to-br from-blue-600 to-cyan-400">
               <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-0.5" />
             </span>
           </Link>
