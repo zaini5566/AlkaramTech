@@ -42,7 +42,7 @@ const COUNTRY_OPTIONS = [
 ]
 
 const inputClass =
-  "w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 transition-colors focus:border-blue-500 focus:outline-none"
+  "w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 transition-colors focus:border-blue-500 focus:outline-none"
 
 function Field({
   label,

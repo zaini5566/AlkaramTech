@@ -41,6 +41,7 @@ export function ServicesSection() {
           {SERVICES.map((service) => (
             <TiltCard
               key={service.slug}
+              hoverTilt={false}
               className="border-transparent bg-zinc-900 shadow-none group-hover:shadow-none"
             >
               <Link

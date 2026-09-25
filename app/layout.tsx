@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
@@ -34,6 +35,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${bricolageGrotesque.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <NextTopLoader
+          color="linear-gradient(90deg, #2563eb, #06b6d4)"
+          height={3}
+          showSpinner={false}
+          shadow="0 0 10px #2563eb, 0 0 20px #06b6d4"
+          speed={400}
+        />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <SiteHeader />
           {children}

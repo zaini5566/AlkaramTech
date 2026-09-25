@@ -20,6 +20,7 @@ import {
 import { cn, sectionHref } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { GetInTouchModal } from "@/components/get-in-touch-modal"
 
 const NAV_LINKS = [
   { href: "#top", label: "Home" },
@@ -47,6 +48,7 @@ export function SiteHeader() {
   const router = useRouter()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [getInTouchOpen, setGetInTouchOpen] = useState(false)
   const [servicesMenuOpen, setServicesMenuOpen] = useState(false)
   const servicesCloseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const { scrollY } = useScroll()
@@ -217,8 +219,7 @@ export function SiteHeader() {
           <div className="hidden items-center gap-3 lg:flex">
             <ThemeToggle />
             <Button
-              render={<a href={resolveHref("#contact")} onClick={navigateTo(resolveHref("#contact"))} />}
-              nativeButton={false}
+              onClick={() => setGetInTouchOpen(true)}
               className="rounded-sm bg-gradient-to-r from-blue-600 to-cyan-500 px-5 text-white shadow-[0_4px_0_0_#0e3a8a] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_0_0_#0e3a8a] active:translate-y-0.5 active:shadow-[0_1px_0_0_#0e3a8a]"
             >
               <MessageCircle className="h-4 w-4" />
@@ -294,8 +295,10 @@ export function SiteHeader() {
 
               <div className="shrink-0 border-t border-border p-5">
                 <Button
-                  render={<a href={resolveHref("#contact")} onClick={navigateTo(resolveHref("#contact"))} />}
-                  nativeButton={false}
+                  onClick={() => {
+                    setOpen(false)
+                    setGetInTouchOpen(true)
+                  }}
                   className="w-full rounded-sm bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-[0_4px_0_0_#0e3a8a] active:translate-y-0.5 active:shadow-[0_1px_0_0_#0e3a8a]"
                 >
                   <MessageCircle className="h-4 w-4" />
@@ -306,6 +309,8 @@ export function SiteHeader() {
           </>
         )}
       </AnimatePresence>
+
+      <GetInTouchModal open={getInTouchOpen} onClose={() => setGetInTouchOpen(false)} />
     </header>
   )
 }
